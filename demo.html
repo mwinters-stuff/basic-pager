@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>basic-pager Demo</title>
+  <script src="../webcomponentsjs/webcomponents.js"></script>
+  <link rel="import" href="../paper-tabs/paper-tabs.html">
+
+  <link rel="import" href="basic-pager.html">
+</head>
+
+<body unresolved flex fullbleed layout vertical>
+  <template is="auto-binding">
+    <style>
+      :host {
+        border: solid green 1px;
+        background: grey;
+      }
+      .page1 {
+        border: solid blue 2px;
+        width: 100%;
+      }
+      .page2 {
+        border: solid magenta 2px;
+        width: 100%;
+      }
+      .page3 {
+        border: solid green 2px;
+        width: 100%;
+      }
+      .page4 {
+        border: solid pink 2px;
+        width: 100%;
+      }
+      basic-pager {
+        border: solid red 2px;
+      }
+    </style>
+    <paper-tabs selected="{{selectedTab}}">
+      <paper-tab>One</paper-tab>
+      <paper-tab>Two</paper-tab>
+      <paper-tab>Three</paper-tab>
+      <paper-tab>Four</paper-tab>
+    </paper-tabs>
+    <basic-pager selected="{{selectedTab}}">
+      <section class="page1">
+        <div>page 1</div>
+      </section>
+      <section class="page2">
+        <div>page 2</div>
+        <div>page 2</div>
+        <div>page 2</div>
+        <div>page 2</div>
+        <div>page 2</div>
+      </section>
+      <section class="page3">
+        <div>page 3</div>
+        <div>page 3</div>
+        <div>page 3</div>
+        <div>page 3</div>
+        <div>page 3</div>
+        <div>page 3</div>
+      </section>
+      <section class="page4">
+        <div>page 4</div>
+        <div>page 4</div>
+        <div>page 4</div>
+        <div>page 4</div>
+        <div>page 4</div>
+        <div>page 4</div>
+        <div>page 4</div>
+        <div>page 4</div>
+        <div>page 4</div>
+        <div>page 4</div>
+        <div>page 4</div>
+        <div>page 4</div>
+        <div>page 4</div>
+        <div>page 4</div>
+        <div>page 4</div>
+        <div>page 4</div>
+        <div>page 4</div>
+        <div>page 4</div>
+        <div>page 4</div>
+        <div>page 4</div>
+        <div>page 4</div>
+        <div>page 4</div>
+        <div>page 4</div>
+        <div>page 4</div>
+        <div>page 4</div>
+        <div>page 4</div>
+        <div>page 4</div>
+        <div>page 4</div>
+        <div>page 4</div>
+        <div>page 4</div>
+        <div>page 4</div>
+        <div>page 4</div>
+        <div>page 4</div>
+        <div>page 4</div>
+        <div>page 4</div>
+      </section>
+    </basic-pager>
+  </template>
+</body>
+
+</html>

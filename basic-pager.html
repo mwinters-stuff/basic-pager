@@ -1,0 +1,61 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+Element providing solution to core-pager not sizing to contents.
+
+##### Example
+
+    <basic-pager selected="{{selected}}">
+      <div>page1</div>
+      <div>page2</div>
+    </basic-pager>
+
+@element basic-pager
+@blurb Add children, each child will shown when child index equals selected.
+@status alpha
+@homepage http://wintersandroid.github.io/basic-pager
+-->
+<polymer-element name="basic-pager" attributes="selected">
+  <style>
+    :host{
+      width: 100%;
+      display: table;
+    }
+  </style>
+  <template>
+    <content></content>
+  </template>
+  <script>
+    Polymer({
+      /**
+       * The index of the selected child page.
+       * @attribute selected
+       * @type integer
+       * @default 0
+       */
+      selected: 0,
+
+      domReady: function() {
+        this.setSelected();
+      },
+
+      observe: {
+        'selected': 'selectedChanged'
+      },
+
+      selectedChanged: function() {
+        console.log('selected', this.selected);
+        this.setSelected();
+      },
+
+      setSelected: function() {
+        var childs = this.children.array();
+        var index = 0;
+        childs.forEach(function(chs) {
+          chs.hidden = index !== this.selected;
+          index++;
+        }, this);
+      },
+    });
+  </script>
+</polymer-element>
